@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BaguetteBox Example</title>
+  <!-- Include BaguetteBox CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+
+</head>
+<style>
+    .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gallery a {
+  flex: 0 0 calc(33.333% - 10px);
+  margin: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery a:hover img {
+  transform: scale(1.1);
+}
+
+
+.gallery a:hover img {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery img {
+	border: 1px solid #ddd;
+}
+
+.gallery a:hover .baguetteBox-caption {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.baguetteBox-caption {
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	padding: 10px;
+}
+
+
+.baguetteBox-button {
+	color: #fff;
+	font-size: 20px;
+}
+
+.baguetteBox-button svg {
+	fill: #fff;
+}
+  
+  
+
+
+@media (max-width: 768px) {
+	.gallery a {
+	  flex: 0 0 calc(50% - 10px); /* Two images per row */
+	}
+}
+
+
+/* Media query for medium screens */
+@media (min-width: 577px) and (max-width: 992px) {
+	.gallery a {
+	  flex: 0 0 calc(50% - 10px); /* Two images per row */
+	}
+}
+
+
+  
+  /* Media query for large screens */
+  @media (min-width: 993px) {
+	.gallery a {
+	  flex: 0 0 calc(33.333% - 10px); /* Three images per row */
+	}
+}
+</style>
+<body>
+
+<!-- Your content goes here -->
+
+<!-- Include BaguetteBox JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+
+<!-- Initialize BaguetteBox after the script is loaded -->
+<script>
+  // Wait for the DOM to be ready before initializing BaguetteBox
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize BaguetteBox
+    baguetteBox.run('.gallery');
+  });
+</script>
+
+
+<div class="gallery">
+    <a href="images/sample.jpeg" data-caption="Image 1"><img src="images/sample.jpeg" alt="Image 1"></a>
+    <a href="images/sample2.jpg" data-caption="Image 2"><img src="images/sample2.jpg" alt="Image 2"></a>
+    <!-- Add more images as needed -->
+</div>
+  
+
+</body>
+</html>
